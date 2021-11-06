@@ -1,0 +1,15 @@
+---
+version: '3'
+services:
+ j1:
+  image: jenkins/jenkins
+  ports:
+   - 7050:8080
+ 
+ t1:
+  image: tomcat
+  ports:
+   - 9091:8080
+  links:
+   - j1:jenkins
+...
